@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>PLAN DE CUENTA</title>
+</head>
+
+<body>
+
+    <style>
+        table {
+            width: 100%;
+        }
+    </style>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="font-size: 11px">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/home"> <%= nombre_empresa %> </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <% switch (idRol) { case 1 : %>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Auditoría
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item" href="/audit/employees">Empleados</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/audit/typesOfDocuments">Tipos de documentos</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/audit/users">Usuarios</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Contabilidad
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item" href="/employees">Plan de cuentas</a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Tablas
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item" href="/employees">Empleados</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/typesOfDocuments">Tipos de documentos</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/roles">Roles</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/users">Usuarios</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <% break; case 2 : %>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/users">Usuarios</a>
+                    </li>
+
+                    <% break; case 3 : %>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Auditoría
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item" href="/audit/employees">Empleados</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/audit/typesOfDocuments">Tipos de documentos</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/audit/users">Usuarios</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <% break; case 4 : %>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Tablas
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item" href="/employees">Empleados</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/typesOfDocuments">Tipos de documentos</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/roles">Roles</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/users">Usuarios</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <% break; } %>
+                </ul>
+            </div>
+        </div>
+
+        <div class="dropdown py-sm-2 px-3 mt-sm-auto ms-auto ms-sm-0 flex-shrink-1">
+            <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="/resources/images/stefano-profile.png" alt="hugenerd" width="28" height="28"
+                    class="rounded-circle">
+                <span class="d-none d-sm-inline mx-1 px-1"></span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+            </ul>
+        </div>
+
+
+
+
+
+        </a>
+
+
+    </nav>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="container-fluid">
+                <div class="bg-primary my-2 py-2 ">
+                    <div class="text-white d-flex">
+                        <h4 class="w-100 px-1">Plan de cuenta</h4>
+                        <div class="dropdown" style="float: right;">
+                            <a class="btn btn-primary" href="#" role="button" id="dropdownMenuLink"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-bars"></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#createModal">Crear
+                                        cuenta</a></li>
+                                <li><a class="dropdown-item" data-bs-toggle="modal"
+                                        data-bs-target="#updateModal">Modificar
+                                        cuenta</a></li>
+                                <li><a class="dropdown-item" data-bs-toggle="modal"
+                                        data-bs-target="#deleteModal">Eliminar
+                                        cuenta</a></li>
+                            </ul>
+                        </div>
+                        <!-- Crear cuenta modal -->
+                        <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel" style="color: black;">Crear una
+                                            nueva cuenta</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+
+                                    <div class="modal-body">
+
+                                        <form action="/chartOfAccounts/create" method="POST">
+                                            <div style="text-align: center;">
+                                                <label style="color:black;">Elija la cuenta
+                                                    superior</label>
+                                            </div>
+                                            <br>
+                                            <select id="create_combobox_cuentas" onchange="create_generarCodigo()"
+                                                class="form-control">
+                                                <% cuentas_no_imputables.forEach((c)=> { %>
+                                                <option value="<%=c.codigo%>"> <%=c.codigo %> -
+                                                    <%=c.nombre%></option>
+                                                <% }) %>
+                                            </select>
+                                            <br>
+                                            <input id="codigo_create" name="codigo_create" type="text" hidden>
+                                            <input title="[ 0 = No imputable ] # [ 1 = Imputable ]" id="es_tipo"
+                                                name="es_tipo" min="0" max="1" class="form-control" type="number"
+                                                placeholder="Tipo">
+                                            <br>
+                                            <input onchange="permitirGuardar()" id="nombre" type="text"
+                                                class="form-control" name="nombre" placeholder="Nombre de la cuenta" />
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger"
+                                            data-bs-dismiss="modal">Cerrar</button>
+                                        <button id="create_boton" type="submit" class="btn btn-success"
+                                            disabled>Guardar</button>
+                                    </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Actualizar cuenta modal -->
+                        <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel" style="color: black;">Modificar
+                                            cuenta</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+
+                                    <div class="modal-body">
+
+
+                                        <form action="/chartOfAccounts/update" method="POST">
+
+                                            <select id="update_combobox_cuentas" onchange="update_generarCodigo()"
+                                                class="form-control">
+                                                <% cuentas_imputables.forEach((c)=> { %>
+                                                <option value="<%=c.codigo%>"> <%=c.codigo %> -
+                                                    <%=c.nombre%></option>
+                                                <% }) %>
+                                            </select>
+                                            <input id="codigo_update" name="codigo_update" type="text" hidden>
+                                            <br>
+                                            <input title="[ 0 = No imputable ] # [ 1 = Imputable ]" id="es_tipo"
+                                                name="es_tipo_update" min="0" max="1" class="form-control" type="number"
+                                                placeholder="Nuevo tipo">
+                                            <br>
+                                            <input onclick="permitirGuardar()" id="nombre_update" type="text"
+                                                class="form-control" name="nombre_update"
+                                                placeholder="Nuevo nombre de cuenta" />
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger"
+                                            data-bs-dismiss="modal">Cerrar</button>
+                                        <button id="update_boton" type="submit" class="btn btn-success" disabled>Guardar</button>
+                                    </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Eliminar cuenta modal -->
+                        <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel" style="color: black;">
+                                            Eliminar una cuenta</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        <select id="combo_cuentas" onchange="generarCodigo()" class="form-control">
+                                            <% cuentas_imputables.forEach((c)=> { %>
+                                            <option value="<%=c.codigo%>"> <%=c.codigo %> -
+                                                <%=c.nombre%></option>
+                                            <% }) %>
+                                        </select>
+                                        <form action="/chartOfAccounts/query" method="POST">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger"
+                                            data-bs-dismiss="modal">Cerrar</button>
+                                        <button type="button" class="btn btn-success">Guardar</button>
+                                    </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div>
+                    <table style="font-size: 11px;">
+                        <thead>
+                            <tr class="bg-primary text-white">
+                                <th scope="col-auto">CÓDIGO</th>
+                                <th scope="col-auto">NÚMERO</th>
+                                <th scope="col-auto">NOMBRE</th>
+                                <th id="esImputable" scope="col-auto">TIPO</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% cuentas.forEach((cuenta)=>{ %>
+                            <tr>
+                                <td>
+                                    <%= cuenta.codigo %>
+                                </td>
+                                <td>
+                                    <%= cuenta.numero %>
+                                </td>
+                                <td>
+                                    <%= cuenta.nombre %>
+                                </td>
+                                <td>
+                                    <%= cuenta.tipo %>
+                                </td>
+                            </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+    </script>
+
+
+    <script>
+        $("#esImputable").attr("title", "0 = No imputable\n1 = Imputable");
+
+        function create_generarCodigo() {
+            var codigo_combo = $('#create_combobox_cuentas').val()
+            $('#codigo_create').attr("value", codigo_combo);
+        }
+
+        function update_generarCodigo() {
+            var codigo_combo = $('#update_combobox_cuentas').val()
+            $('#codigo_update').attr("value", codigo_combo);
+
+        }
+
+        function permitirGuardar() {
+            $("#create_boton").removeAttr('disabled');
+            $("#update_boton").removeAttr('disabled');
+        }
+    </script>
+
+
+</body>
+
+</html>

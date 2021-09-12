@@ -1,0 +1,131 @@
+/* Tipos de documentos */
+
+#typesOfDocumentsTable_info {
+    font-size: 12px;
+  }
+  #typesOfDocumentsTable_length {
+    font-size: 12px;
+    margin-top: 6px;
+  }
+  #typesOfDocumentsTable_paginate {
+    font-size: 12px;
+    
+  }
+
+  #typesOfDocumentsTable_filter {
+
+    font-size: 12px;
+
+  }
+
+  .btn-secondary buttons-excel buttons-html5 btn-success {
+    font-size: 0px;
+  }
+  input.form-control form-control-sm {
+    font-size: 1px;
+  }
+
+
+  /* Empleados */
+
+  #employeesTable_info {
+    font-size: 12px;
+  }
+  #employeesTable_length {
+    font-size: 12px;
+    margin-top: 6px;
+  }
+  #employeesTable_paginate {
+    font-size: 12px;
+    
+  }
+
+  #employeesTable_filter {
+
+    font-size: 12px;
+
+  }
+
+
+  /* Roles */
+
+  #rolesTable_info {
+    font-size: 12px;
+  }
+  #rolesTable_length {
+    font-size: 12px;
+    margin-top: 6px;
+  }
+  #rolesTable_paginate {
+    font-size: 12px;
+    
+  }
+
+  #rolesTable_filter {
+
+    font-size: 12px;
+
+  }
+
+  /* Usuarios */
+
+  #usersTable_info {
+    font-size: 12px;
+  }
+  #usersTable_length {
+    font-size: 12px;
+    margin-top: 6px;
+  }
+  #usersTable_paginate {
+    font-size: 12px;
+    
+  }
+
+  #usersTable_filter {
+
+    font-size: 12px;
+
+  }
+
+    /* Auditoria empleados */
+
+    #employeesAuditTable_info {
+        font-size: 12px;
+      }
+      #employeesAuditTable_length {
+        font-size: 12px;
+        margin-top: 6px;
+      }
+      #employeesAuditTable_paginate {
+        font-size: 12px;
+        
+      }
+    
+      #employeesAuditTable_filter {
+    
+        font-size: 12px;
+    
+      }
+
+
+          /* Auditoria usuarios */
+
+    #usersAuditTable_info {
+        font-size: 12px;
+      }
+      #usersAuditTable_length {
+        font-size: 12px;
+        margin-top: 6px;
+      }
+      #usersAuditTable_paginate {
+        font-size: 12px;
+        
+      }
+    
+      #usersAuditTable_filter {
+    
+        font-size: 12px;
+    
+      }
+
+

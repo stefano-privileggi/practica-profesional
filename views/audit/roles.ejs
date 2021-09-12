@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <title>Auditoria de roles</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <nav class="navbar navbar-dark">
+            </nav>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/home">Inicio</a>
+                    </li>
+                </ul>
+            </div>
+            <span style="float: right; color: white"> <%= email %> </span>  
+        </div>
+    </nav>
+    <div class="container">
+        <table class="table table-bordered table-striped text-center mt-4">
+            <thead>
+                <tr class="bg-primary text-white">
+                    <th scope="col">USUARIO</th>
+                    <th scope="col">ID ROL</th>
+                    <th scope="col">ROL</th>
+                    <th scope="col">ACCION</th>
+                    <th scope="col">TERMINAL</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">DESCRIPCION</th>
+                    <th scope="col">FECHA</th>
+                    <th scope="col">HORA</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% listado.forEach((auditoria)=>{ %>
+                    <tr>
+                        <td>
+                            <%= auditoria.usuario %>
+                        </td>
+                        <td>
+                            <%= auditoria.rol %>
+                        </td>
+                        <td>
+                            <%= auditoria.cargo %>
+                        </td>
+                        <td>
+                            <%= auditoria.accion %>
+                        </td>
+                        <td>
+                            <%= auditoria.terminal %>
+                        </td>
+                        <td>
+                            <%= auditoria.id %>
+                        </td> 
+                        <td>
+                            <%= auditoria.descripcion %>
+                        </td>  
+                        <td>
+                            <%= auditoria.fecha%>
+                        </td> 
+                        <td>
+                            <%= auditoria.hora%>
+                        </td> 
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
+        <br>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
