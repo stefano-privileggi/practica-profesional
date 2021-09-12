@@ -38,6 +38,8 @@ router.get('/', (req, res) => {
     }
 });
 
+
+
 router.post('/create', (req, res) => {
     var codigo = req.body.codigo_create;
     var nombre_cuenta = req.body.nombre;
